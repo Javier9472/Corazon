@@ -33,9 +33,10 @@ header h1 {
 }
 
 .controls {
-    position: absolute;
-    top: 80px;
+    position: relative;
+    margin-top: 20px;
     display: flex;
+    justify-content: center;
     gap: 20px;
     z-index: 10;
 }
@@ -44,7 +45,7 @@ button {
     background: linear-gradient(45deg, #6200ff, #866ccd);
     color: white;
     font-size: 1.2rem;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
