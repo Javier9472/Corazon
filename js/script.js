@@ -22,7 +22,7 @@ function drawHeart() {
     if (!isAnimating) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.setTransform(1, 0, 0, 1, canvas.width / 2, canvas.height / 2); 
+    ctx.setTransform(1, 0, 0, 1, canvas.width / 2, canvas.height / 2);
 
     ctx.beginPath();
     for (let i = 0; i < t; i += 0.01) {
@@ -33,17 +33,7 @@ function drawHeart() {
     ctx.strokeStyle = currentColor;
     ctx.lineWidth = 3;
     ctx.stroke();
-    ctx.setTransform(1, 0, 0, 1, 0, 0); 
-
-    if (isSigned) {
-        ctx.fillStyle = "white";
-        ctx.font = "bold 28px 'Brush Script MT', cursive";
-        ctx.textAlign = "center";
-        ctx.shadowColor = "#ff4c4c";
-        ctx.shadowBlur = 10;
-        ctx.fillText("Con mucho cariño, Guadalupe ❤️", canvas.width / 2, canvas.height / 2 + 60);
-        ctx.shadowBlur = 0; 
-    }
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
 
     t += 0.05;
     if (t > Math.PI * 2) t = 0;
@@ -53,6 +43,8 @@ function drawHeart() {
 
 document.getElementById("signHeart").addEventListener("click", () => {
     isSigned = true;
+    const signedMessage = document.getElementById("signedMessage");
+    signedMessage.classList.remove("hidden");
     drawHeart();
 });
 
